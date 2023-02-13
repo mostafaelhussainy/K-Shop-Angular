@@ -1,0 +1,154 @@
+<section class="products-wrapper">
+  <main *ngIf="!loading">
+    <div class="products-grid-wrapper">
+      <div class="products-wrapper-header">
+        <app-select [data]="categories" main="عرض الكل"
+          (selectedValue)="filterCategory($event)"></app-select>
+        <hr>
+        <span class="headline1-—-24pt">وصل حديثًا</span>
+      </div>
+      <div class="products-grid">
+        <div class="product"
+          *ngFor="let product of products">
+          <figure class="product-figure">
+            <img src="{{product.image}}">
+          </figure>
+          <span class="label bodytext1-—-14pt">جديد</span>
+          <h4 class="headline4-—-18pt product-name">
+            {{product.title}}
+          </h4>
+          <div class="product-rate">
+            <img class="star active"
+              src="../../../../assets/products/all-products/golden-star.svg">
+            <img class="star active"
+              src="../../../../assets/products/all-products/golden-star.svg">
+            <img class="star active"
+              src="../../../../assets/products/all-products/golden-star.svg">
+            <img class="star"
+              src="../../../../assets/products/all-products/golden-star.svg">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              width="17.473" height="16.631"
+              viewBox="0 0 17.473 16.631">
+              <path id="Star_Copy_3" data-name="Star Copy 3"
+                d="M9.4,13.79,4,16.631l1.031-6.017L.661,6.353,6.7,5.475,9.4,0l2.7,5.475,6.037.878-4.368,4.261L14.8,16.631Z"
+                transform="translate(-0.661)"
+                fill="#eaeaea" />
+            </svg>
+          </div>
+          <h5 class="headline5-—-16pt product-price">90.00 ج
+            م
+          </h5>
+          <div class="controls">
+            <button class="wishlist">
+              <svg id="favorite_border-24px"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24">
+                <path id="Path_116" data-name="Path 116"
+                  d="M0,0H24V24H0Z" fill="none" />
+                <path id="Path_117" data-name="Path 117"
+                  d="M16.5,3A5.988,5.988,0,0,0,12,5.09,5.988,5.988,0,0,0,7.5,3,5.447,5.447,0,0,0,2,8.5c0,3.78,3.4,6.86,8.55,11.54L12,21.35l1.45-1.32C18.6,15.36,22,12.28,22,8.5A5.447,5.447,0,0,0,16.5,3ZM12.1,18.55l-.1.1-.1-.1C7.14,14.24,4,11.39,4,8.5A3.418,3.418,0,0,1,7.5,5a3.909,3.909,0,0,1,3.57,2.36h1.87A3.885,3.885,0,0,1,16.5,5,3.418,3.418,0,0,1,20,8.5C20,11.39,16.86,14.24,12.1,18.55Z"
+                  fill="#b7aeca" />
+              </svg>
+            </button>
+            <button class="share">
+              <svg id="share"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24">
+                <g id="share-24px">
+                  <g id="share-24px-2"
+                    data-name="share-24px">
+                    <path id="Path_30" data-name="Path 30"
+                      d="M0,0H24V24H0Z" fill="none" />
+                    <path id="Path_31" data-name="Path 31"
+                      d="M18,16.08a2.912,2.912,0,0,0-1.96.77L8.91,12.7A3.274,3.274,0,0,0,9,12a3.274,3.274,0,0,0-.09-.7l7.05-4.11A2.993,2.993,0,1,0,15,5a3.274,3.274,0,0,0,.09.7L8.04,9.81a3,3,0,1,0,0,4.38l7.12,4.16a2.821,2.821,0,0,0-.08.65A2.92,2.92,0,1,0,18,16.08Z"
+                      fill="#b7aeca" />
+                  </g>
+                </g>
+              </svg>
+            </button>
+            <button class="add-to-cart">
+              <img
+                src="../../../../assets/products/all-products/add_shopping_cart-black-18dp.svg">
+              أضف للسلة
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="products-column">
+      <h4 class="headlne-4-—-18pt">
+        منتجات تم تصفيتها مؤخرًا
+      </h4>
+      <div class="product" *ngFor="let product of products">
+        <figure class="product-figure">
+          <img src="{{product.image}}">
+        </figure>
+        <div class="product-details-wrapper">
+          <span class="label bodytext1-—-14pt">جديد</span>
+          <button class="compare">
+            <svg id="compare_arrows_black_24dp"
+              xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24">
+              <path id="Path_178" data-name="Path 178"
+                d="M0,0H24V24H0Z" transform="translate(0)"
+                fill="none" />
+              <path id="Path_179" data-name="Path 179"
+                d="M9.01,14H2v2H9.01v3L13,15,9.01,11Zm5.98-1V10H22V8H14.99V5L11,9Z"
+                transform="translate(0)" fill="#23104e" />
+            </svg>
+          </button>
+          <h4 class="headline4-—-18pt product-name">
+            {{product.title}}
+          </h4>
+          <h5 class="headline5-—-16pt product-price">90.00 ج
+            م
+          </h5>
+          <div class="controls">
+            <button class="wishlist">
+              <svg id="favorite_border-24px"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24">
+                <path id="Path_116" data-name="Path 116"
+                  d="M0,0H24V24H0Z" fill="none" />
+                <path id="Path_117" data-name="Path 117"
+                  d="M16.5,3A5.988,5.988,0,0,0,12,5.09,5.988,5.988,0,0,0,7.5,3,5.447,5.447,0,0,0,2,8.5c0,3.78,3.4,6.86,8.55,11.54L12,21.35l1.45-1.32C18.6,15.36,22,12.28,22,8.5A5.447,5.447,0,0,0,16.5,3ZM12.1,18.55l-.1.1-.1-.1C7.14,14.24,4,11.39,4,8.5A3.418,3.418,0,0,1,7.5,5a3.909,3.909,0,0,1,3.57,2.36h1.87A3.885,3.885,0,0,1,16.5,5,3.418,3.418,0,0,1,20,8.5C20,11.39,16.86,14.24,12.1,18.55Z"
+                  fill="#b7aeca" />
+              </svg>
+            </button>
+            <button class="share">
+              <svg id="share"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24">
+                <g id="share-24px">
+                  <g id="share-24px-2"
+                    data-name="share-24px">
+                    <path id="Path_30" data-name="Path 30"
+                      d="M0,0H24V24H0Z" fill="none" />
+                    <path id="Path_31" data-name="Path 31"
+                      d="M18,16.08a2.912,2.912,0,0,0-1.96.77L8.91,12.7A3.274,3.274,0,0,0,9,12a3.274,3.274,0,0,0-.09-.7l7.05-4.11A2.993,2.993,0,1,0,15,5a3.274,3.274,0,0,0,.09.7L8.04,9.81a3,3,0,1,0,0,4.38l7.12,4.16a2.821,2.821,0,0,0-.08.65A2.92,2.92,0,1,0,18,16.08Z"
+                      fill="#b7aeca" />
+                  </g>
+                </g>
+              </svg>
+            </button>
+            <button class="add-to-cart">
+              <svg id="add_shopping_cart-black-18dp"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24">
+                <path id="Path_80" data-name="Path 80"
+                  d="M0,0H24V24H0ZM18.31,6l-2.76,5Z"
+                  fill="none" />
+                <path id="Path_81" data-name="Path 81"
+                  d="M11,9h2V6h3V4H13V1H11V4H8V6h3ZM7,18a2,2,0,1,0,2,2A2,2,0,0,0,7,18Zm10,0a2,2,0,1,0,2,2A2,2,0,0,0,17,18ZM7.17,14.75l.03-.12L8.1,13h7.45a1.991,1.991,0,0,0,1.75-1.03l3.86-7.01L19.42,4h-.01l-1.1,2-2.76,5H8.53l-.13-.27L6.16,6,5.21,4,4.27,2H1V4H3l3.6,7.59L5.25,14.04A1.933,1.933,0,0,0,5,15a2.006,2.006,0,0,0,2,2H19V15H7.42A.254.254,0,0,1,7.17,14.75Z"
+                  fill="#302ca2" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="text-center w-100" *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div>
+</section>

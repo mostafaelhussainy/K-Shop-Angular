@@ -1,0 +1,9 @@
+<select class="headline6-—-16pt view-all-btn"
+  (change)="detectChanges($event)">
+  <option value="{{main}}">
+    {{main}}
+  </option>
+  <option value="{{option}}" *ngFor="let option of data">
+    {{option}}
+  </option>
+</select>
